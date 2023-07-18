@@ -1,3 +1,20 @@
-<p>The {{title}} app is working</p>
-<p>Hey, I'm {{name}}!</p>
-<app-dashboard></app-dashboard>
+<nb-layout>
+
+  <nb-layout-header fixed>
+  <h3>Hotellerie</h3>
+  </nb-layout-header>
+
+  <nb-layout-column>
+    <app-dashboard></app-dashboard>
+  </nb-layout-column>
+
+  <nb-layout-footer>
+    <div class="ftr">
+      <p><b>Copyright 2023 © Chahine Elati</b></p>
+    </div>
+  </nb-layout-footer>
+  <nb-sidebar>
+    <app-menu></app-menu>
+  </nb-sidebar>
+
+</nb-layout>

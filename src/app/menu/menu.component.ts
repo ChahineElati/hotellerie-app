@@ -12,18 +12,22 @@ export class MenuComponent implements OnInit {
     {
       title: 'Chambres',
       icon: 'home-outline',
+      link: 'chambres',
     },
     {
       title: 'Menus',
       icon: 'list-outline',
+      link: 'menus',
     },
     {
       title: 'Services',
       icon: 'smiling-face-outline',
+      link: 'services',
     },
     {
       title: 'Évènements',
       icon: 'calendar-outline',
+      link: 'evenements',
     },
   ];
 

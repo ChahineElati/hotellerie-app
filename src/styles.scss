@@ -5,6 +5,6 @@
 @include nb-install() {
   @include nb-theme-global();
 };
-p {
+p, label {
     font-family: Arial, Helvetica, sans-serif;
 }

@@ -1,11 +1,16 @@
-<nb-layout>
+<nb-layout *ngIf="auth==true else sinon">
 
   <nb-layout-header fixed>
-  <h3>Hotellerie</h3>
+    <h3><a routerLink="/" style="text-decoration: none;">Hotellerie</a></h3>
+    <div style="margin-left: 850px; margin-top: 20px;">
+      <nb-user [name]="name" picture="assets/profile.jpg" style="display: inline-block; margin-right: 10px;"></nb-user>
+      <button nbButton size="small" style="margin-bottom: 30px;" (click)="logOut()">Déconnexion</button>
+  </div>
+    
   </nb-layout-header>
 
   <nb-layout-column>
-    <app-dashboard></app-dashboard>
+    <router-outlet></router-outlet>
   </nb-layout-column>
 
   <nb-layout-footer>
@@ -18,3 +23,35 @@
   </nb-sidebar>
 
 </nb-layout>
+
+<ng-template #sinon>
+  <nb-layout>
+    <nb-layout-column>
+      <nb-card style="margin: 75px; margin-left: 200px; margin-right: 200px;">
+        <nb-card-body>
+          <nb-layout-column>
+            <div align="center">
+              <h1>AUTHENTIFICATION</h1>
+              <table cellpadding="10">
+                <tr>
+                  <td><label for="Email"><b>Email : </b></label></td>
+                  <td><input [(ngModel)]="email" nbInput placeholder="exemple@gmail.com" type="email" id="Email"></td>
+                </tr>
+
+                <tr>
+                  <td><label for="mdp"><b>Mot de passe : </b></label></td>
+                  <td><input [(ngModel)]="mdp" nbInput placeholder="•••••" type="password" id="mdp"></td>
+                </tr>
+
+                <tr align="center">
+                  <td colspan="2"><button nbButton size="small" (click)="logIn()"><b>connexion</b></button></td>
+                </tr>
+              </table>
+            </div>
+          </nb-layout-column>
+        </nb-card-body>
+      </nb-card>
+    </nb-layout-column>
+  </nb-layout>
+
+</ng-template>

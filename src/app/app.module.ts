@@ -2,17 +2,18 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { MenuModule } from './menu/menu.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbMenuModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbMenuModule, NbCardModule, NbInputModule, NbButtonModule, NbUserModule, NbSelectModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { AppRoutingModule } from './app-routing.module';
+import { ChambresComponent } from './pages/chambres/chambres.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    ChambresComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,6 +25,12 @@ import { AppRoutingModule } from './app-routing.module';
     AppRoutingModule,
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
+    NbCardModule,
+    NbInputModule,
+    NbButtonModule,
+    NbUserModule,
+    FormsModule,
+    NbSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

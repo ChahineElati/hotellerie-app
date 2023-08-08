@@ -1,0 +1,22 @@
+<nb-card [accent]="details.etat ? 'danger' : 'success'">
+    <nb-card-header>
+        
+        {{details.num}}
+    </nb-card-header>
+    <nb-card-body>
+      <p><b>Prix par jour :</b> {{details.prixParJr}}</p>
+      <p><b>Etat : </b> {{details.etat ? "Réservée" : "Libre"}}</p>
+      <div *ngIf="details.etat">
+        <p> <b>Date de location :</b> {{details.dt_lct}}</p>
+      </div>
+    </nb-card-body>
+    <nb-card-footer>
+        <p>
+            <button nbButton status="primary" [disabled]="details.etat">réserver</button>
+            &nbsp;&nbsp;
+            <button nbButton status="primary">modifier</button>
+        </p>
+        
+        
+    </nb-card-footer>
+  </nb-card>

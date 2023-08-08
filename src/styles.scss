@@ -1,0 +1,15 @@
+@use 'themes' as *;
+
+@use '@nebular/theme/styles/globals' as *;
+
+@include nb-install() {
+  @include nb-theme-global();
+};
+p, label {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.chambres {
+  display: inline-block;
+  margin-left: 10px;
+}

@@ -1,0 +1,32 @@
+<nb-card>
+    <nb-card-header>
+        RÉSERVATION
+    </nb-card-header>
+    <nb-card-body>
+        <table cellspacing="10">
+            <tr>
+                <td>
+                    <label for="dt"><b>Date : </b></label>
+                </td>
+                <td>
+                    <input nbInput [nbDatepicker]="datepicker" id="dt" fieldSize="medium">
+                    <nb-datepicker #datepicker></nb-datepicker>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="nb-jr"><b>Nombre de jours : </b></label>
+                </td>
+                <td>
+                    <input nbInput type="number" id="nb-jr" fieldSize="medium">
+                </td>
+            </tr>
+        </table>
+        
+        
+    </nb-card-body>
+    <nb-card-footer align="center">
+        <button nbButton status="primary" (click)="reserver()">réserver</button>&nbsp;&nbsp;
+        <button nbButton status="danger" (click)="annuler()">annuler</button>
+    </nb-card-footer>
+</nb-card>

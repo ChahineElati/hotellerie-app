@@ -1,0 +1,15 @@
+<nb-card>
+    <nb-card-header>
+        MODIFICATION
+    </nb-card-header>
+    <nb-card-body>
+        
+        <label for="prix">Prix par jour: </label>
+        <input nbInput type="number" id="prix" fieldSize="medium">
+        
+    </nb-card-body>
+    <nb-card-footer align="center">
+        <button nbButton status="primary" (click)="modifier()">modifier</button>&nbsp;&nbsp;
+        <button nbButton status="danger" (click)="annuler()">annuler</button>
+    </nb-card-footer>
+</nb-card>

@@ -1,20 +1,27 @@
 <nb-card [accent]="details.etat ? 'danger' : 'success'">
     <nb-card-header>
-        
-        {{details.num}}
+      <div>
+        <span>{{details.num}}</span>
+        <img src="assets/home.png" width="50" style="float: right;">
+      </div>
     </nb-card-header>
     <nb-card-body>
-      <p><b>Prix par jour :</b> {{details.prixParJr}}</p>
-      <p><b>Etat : </b> {{details.etat ? "Réservée" : "Libre"}}</p>
+      <p><b>Prix par jour : </b>{{details.prixParJr}} Dt</p>
+      <p><b>Type : </b>{{details.type}}</p>
+      <p><b>Etat : </b>{{details.etat ? "Réservée" : "Libre"}}</p>
       <div *ngIf="details.etat">
-        <p> <b>Date de location :</b> {{details.dt_lct}}</p>
+        <p> <b>Date de location : </b>{{details.dt_lct}}</p>
+        <p><b>Nombre de jours : </b>{{details.nb_jour}}</p>
       </div>
+      
+      <div align="right"><a routerLink="/historique/{{details.num}}">Historique</a></div>
+      
     </nb-card-body>
     <nb-card-footer>
         <p>
-            <button nbButton status="primary" [disabled]="details.etat">réserver</button>
+            <button nbButton status="primary" [disabled]="details.etat" (click)="openRes()">réserver</button>
             &nbsp;&nbsp;
-            <button nbButton status="primary">modifier</button>
+            <button nbButton status="primary" (click)="openModf()">modifier</button>
         </p>
         
         

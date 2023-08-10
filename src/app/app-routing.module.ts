@@ -6,6 +6,7 @@ import { MenuComponent } from './menu/menu.component';
 import { MenusComponent } from './pages/menus/menus.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { EvenementsComponent } from './pages/evenements/evenements.component';
+import { HistoriqueComponent } from './pages/historique/historique.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'evenements',
     component: EvenementsComponent,
+  },
+  {
+    path: 'historique/:num',
+    component: HistoriqueComponent,
   },
 ];
 

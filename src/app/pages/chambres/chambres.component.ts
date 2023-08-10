@@ -13,6 +13,7 @@ export class ChambresComponent implements OnInit {
     prixParJr: 120,
     type: "s+1",
     dt_lct: "20/08/2023",
+    nb_jour: 6,
   }
 
   chmb2 = {
@@ -21,6 +22,7 @@ export class ChambresComponent implements OnInit {
     prixParJr: 150,
     type: "s+2",
     dt_lct: "02/05/2023",
+    nb_jour: 8,
   }
 
   constructor() { }

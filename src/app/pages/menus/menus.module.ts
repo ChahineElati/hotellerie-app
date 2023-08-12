@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MenusComponent } from './menus.component';
+import { NbButtonModule } from '@nebular/theme';
 
 
 
@@ -9,7 +10,7 @@ import { MenusComponent } from './menus.component';
     MenusComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
   ]
 })
 export class MenusModule { }

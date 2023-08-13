@@ -1,2 +1,20 @@
 <h1>Services</h1>
 <hr>
+<br>
+<button nbButton status="primary" (click)="ajouterSrv()">ajouter service</button>
+<h5>Liste des services :</h5>
+<nb-card>
+    <nb-accordion>
+        <nb-accordion-item *ngFor="let plat of lst_plats">
+         <nb-accordion-item-header>{{plat.nom}}</nb-accordion-item-header>
+         <nb-accordion-item-body>
+           <p><b>Prix : </b> {{plat.prix}} Dt</p>
+           <p><b>Temps de préparation : </b> {{plat.tmp_prep}} mins</p>
+           <p><b>Type : </b> {{plat.type}} </p>
+           <button nbButton status="primary" (click)="effectuerSrv()">effectuer service</button>&nbsp;&nbsp;
+           <button nbButton status="primary" (click)="modfSrv(plat)">modifier</button>&nbsp;&nbsp;
+           <button nbButton status="danger" (click)="supprimer(plat)">supprimer</button>
+         </nb-accordion-item-body>
+        </nb-accordion-item>
+       </nb-accordion>
+</nb-card>

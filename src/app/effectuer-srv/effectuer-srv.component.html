@@ -1,0 +1,19 @@
+<nb-card>
+    <nb-card-header>Effectuer Service</nb-card-header>
+    <nb-card-body>
+        <table cellspacing="10">
+            <tr>
+                <td><label for="nom"><b>Nom du client : </b></label></td>
+                <td><input nbInput type="text" id="nom" [(ngModel)]="client.nom"></td>
+            </tr>
+            <tr>
+                <td><label for="prenom"><b>Prénom du client : </b></label></td>
+                <td><input nbInput type="text" id="prenom" [(ngModel)]="client.prenom"></td>
+            </tr>
+        </table>
+    </nb-card-body>
+    <nb-card-footer align="center">
+        <button nbButton status="primary" (click)="effectuer()">effectuer</button>&nbsp;&nbsp;
+        <button nbButton status="danger" (click)="close()">annuler</button>
+    </nb-card-footer>
+</nb-card>

@@ -17,6 +17,10 @@ import { MenusComponent } from './pages/menus/menus.component';
 import { ModifierPlatComponent } from './modifier-plat/modifier-plat.component';
 import { AjouterPlatComponent } from './ajouter-plat/ajouter-plat.component';
 import { EffectuerPlatComponent } from './effectuer-plat/effectuer-plat.component';
+import { ServicesComponent } from './pages/services/services.component';
+import { AjouterSrvComponent } from './ajouter-srv/ajouter-srv.component';
+import { EffectuerSrvComponent } from './effectuer-srv/effectuer-srv.component';
+import { ModifierSrvComponent } from './modifier-srv/modifier-srv.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +33,10 @@ import { EffectuerPlatComponent } from './effectuer-plat/effectuer-plat.componen
     ModifierPlatComponent,
     AjouterPlatComponent,
     EffectuerPlatComponent,
+    ServicesComponent,
+    AjouterSrvComponent,
+    EffectuerSrvComponent,
+    ModifierSrvComponent,
   ],
   imports: [
     BrowserModule,

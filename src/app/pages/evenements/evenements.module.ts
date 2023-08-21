@@ -6,7 +6,7 @@ import { EvenementsComponent } from './evenements.component';
 
 @NgModule({
   declarations: [
-    EvenementsComponent
+    EvenementsComponent,
   ],
   imports: [
     CommonModule

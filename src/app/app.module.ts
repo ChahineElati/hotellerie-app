@@ -21,6 +21,10 @@ import { ServicesComponent } from './pages/services/services.component';
 import { AjouterSrvComponent } from './ajouter-srv/ajouter-srv.component';
 import { EffectuerSrvComponent } from './effectuer-srv/effectuer-srv.component';
 import { ModifierSrvComponent } from './modifier-srv/modifier-srv.component';
+import { AjouterEvComponent } from './ajouter-ev/ajouter-ev.component';
+import { EvenementComponent } from './evenement/evenement.component';
+import { ConfirmerComponent } from './confirmer/confirmer.component';
+import { EvenementsComponent } from './pages/evenements/evenements.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +41,10 @@ import { ModifierSrvComponent } from './modifier-srv/modifier-srv.component';
     AjouterSrvComponent,
     EffectuerSrvComponent,
     ModifierSrvComponent,
+    AjouterEvComponent,
+    EvenementComponent,
+    ConfirmerComponent,
+    EvenementsComponent
   ],
   imports: [
     BrowserModule,

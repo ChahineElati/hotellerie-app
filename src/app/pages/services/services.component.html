@@ -5,15 +5,14 @@
 <h5>Liste des services :</h5>
 <nb-card>
     <nb-accordion>
-        <nb-accordion-item *ngFor="let plat of lst_plats">
-         <nb-accordion-item-header>{{plat.nom}}</nb-accordion-item-header>
+        <nb-accordion-item *ngFor="let srv of lst_srv">
+         <nb-accordion-item-header>{{srv.label}}</nb-accordion-item-header>
          <nb-accordion-item-body>
-           <p><b>Prix : </b> {{plat.prix}} Dt</p>
-           <p><b>Temps de préparation : </b> {{plat.tmp_prep}} mins</p>
-           <p><b>Type : </b> {{plat.type}} </p>
+           <p><b>Prix : </b> {{srv.prix}} Dt</p>
+           <p><b>Catégorie : </b> {{srv.categorie}}</p>
            <button nbButton status="primary" (click)="effectuerSrv()">effectuer service</button>&nbsp;&nbsp;
-           <button nbButton status="primary" (click)="modfSrv(plat)">modifier</button>&nbsp;&nbsp;
-           <button nbButton status="danger" (click)="supprimer(plat)">supprimer</button>
+           <button nbButton status="primary" (click)="modfSrv(srv)">modifier</button>&nbsp;&nbsp;
+           <button nbButton status="danger" (click)="supprimer(srv)">supprimer</button>
          </nb-accordion-item-body>
         </nb-accordion-item>
        </nb-accordion>

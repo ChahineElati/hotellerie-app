@@ -7,12 +7,5 @@
 <br>
 <br>
 <div>
-    <app-evenement class="chambres" [details]=chmb1></app-evenement>
-    <app-evenement class="chambres" [details]=chmb2></app-evenement>
-    <app-evenement class="chambres" [details]=chmb1></app-evenement>
-</div>
-
-<div>
-    
-    <app-evenement class="chambres" [details]=chmb2></app-evenement>
+    <app-evenement class="chambres" *ngFor="let evt of lst_evt" [details]="evt"></app-evenement>
 </div>

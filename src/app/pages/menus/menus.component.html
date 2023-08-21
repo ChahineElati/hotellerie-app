@@ -6,11 +6,11 @@
 <nb-card>
     <nb-accordion>
         <nb-accordion-item *ngFor="let plat of lst_plats">
-         <nb-accordion-item-header>{{plat.nom}}</nb-accordion-item-header>
+         <nb-accordion-item-header>{{plat.nom_rep}}</nb-accordion-item-header>
          <nb-accordion-item-body>
            <p><b>Prix : </b> {{plat.prix}} Dt</p>
            <p><b>Temps de préparation : </b> {{plat.tmp_prep}} mins</p>
-           <p><b>Type : </b> {{plat.type}} </p>
+           <p><b>Type : </b> {{plat.type_plat}} </p>
            <button nbButton status="primary" (click)="effectuerPlat()">effectuer plat</button>&nbsp;&nbsp;
            <button nbButton status="primary" (click)="modfPlat(plat)">modifier</button>&nbsp;&nbsp;
            <button nbButton status="danger" (click)="supprimer(plat)">supprimer</button>

@@ -1,7 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { NbDialogService } from '@nebular/theme';
 import { AjouterPlatComponent } from 'src/app/ajouter-plat/ajouter-plat.component';
 import { EffectuerPlatComponent } from 'src/app/effectuer-plat/effectuer-plat.component';
+import { Repas } from 'src/app/entities/repas';
 import { ModifierPlatComponent } from 'src/app/modifier-plat/modifier-plat.component';
 
 @Component({
@@ -11,18 +13,17 @@ import { ModifierPlatComponent } from 'src/app/modifier-plat/modifier-plat.compo
 })
 export class MenusComponent implements OnInit {
 
-  lst_plats = [
-    {
-      nom : "Galettes bretonnes",
-      prix : 15,
-      tmp_prep : 30,
-      type : 'Salé'
-    },
-  ];
+  lst_plats!: Repas[];
 
-  constructor(private modf: NbDialogService) { }
+  constructor(private modf: NbDialogService, private httpClient: HttpClient) { }
   
   ngOnInit(): void {
+
+    this.httpClient.get("http://localhost:8080/api/repas/")
+    .subscribe((data:any) => {
+      this.lst_plats = data;
+    });
+
   }
 
   supprimer(plat: any) {

@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { NbDialogService } from '@nebular/theme';
 import { AjouterEvComponent } from '../ajouter-ev/ajouter-ev.component';
 import { ConfirmerComponent } from '../confirmer/confirmer.component';
+import { Evenement } from '../entities/evenement';
 
 @Component({
   selector: 'app-evenement',
@@ -10,14 +11,7 @@ import { ConfirmerComponent } from '../confirmer/confirmer.component';
 })
 export class EvenementComponent implements OnInit {
   
-  @Input() details = {
-    num: "",
-    etat: false,
-    prixParJr: 0,
-    type: "",
-    dt_lct: "",
-    nb_jour: 0,
-  };
+  @Input() details!: Evenement;
 
 
   constructor(private dialog: NbDialogService) { }

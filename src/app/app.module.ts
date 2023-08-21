@@ -25,6 +25,7 @@ import { AjouterEvComponent } from './ajouter-ev/ajouter-ev.component';
 import { EvenementComponent } from './evenement/evenement.component';
 import { ConfirmerComponent } from './confirmer/confirmer.component';
 import { EvenementsComponent } from './pages/evenements/evenements.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { EvenementsComponent } from './pages/evenements/evenements.component';
     AjouterEvComponent,
     EvenementComponent,
     ConfirmerComponent,
-    EvenementsComponent
+    EvenementsComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,6 +69,7 @@ import { EvenementsComponent } from './pages/evenements/evenements.component';
     NbDatepickerModule,
     NbListModule,
     NbAccordionModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

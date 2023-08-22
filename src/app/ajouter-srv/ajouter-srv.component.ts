@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicesComponent } from '../pages/services/services.component';
 import { NbDialogRef } from '@nebular/theme';
+import { Service } from '../entities/service';
 
 @Component({
   selector: 'app-ajouter-srv',
@@ -9,12 +10,7 @@ import { NbDialogRef } from '@nebular/theme';
 })
 export class AjouterSrvComponent implements OnInit {
 
-  plat = {
-    nom: "",
-    prix: 0,
-    tmp_prep: 0,
-    type: "",
-  };
+  srv: Service = new Service();
 
   constructor(private ajouter: NbDialogRef<ServicesComponent>) { }
 
@@ -22,7 +18,7 @@ export class AjouterSrvComponent implements OnInit {
   }
 
   close() {
-    this.ajouter.close(this.plat);
+    this.ajouter.close(this.srv);
   }
   
   annuler() {

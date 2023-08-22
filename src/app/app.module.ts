@@ -26,6 +26,7 @@ import { EvenementComponent } from './evenement/evenement.component';
 import { ConfirmerComponent } from './confirmer/confirmer.component';
 import { EvenementsComponent } from './pages/evenements/evenements.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ClientComponent } from './entities/client/client.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { HttpClientModule } from '@angular/common/http';
     EvenementComponent,
     ConfirmerComponent,
     EvenementsComponent,
+    ClientComponent,
   ],
   imports: [
     BrowserModule,

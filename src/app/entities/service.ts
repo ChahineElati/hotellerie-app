@@ -1,7 +1,7 @@
 import { Client } from "./client";
 
 export class Service {
-    id_serv!: number;
+    id_srv!: number;
     label!: string;
     prix!: number;
     categorie!: string;

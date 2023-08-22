@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NbDialogRef } from '@nebular/theme';
+import { Evenement } from '../entities/evenement';
+import { EvenementsComponent } from '../pages/evenements/evenements.component';
 
 @Component({
   selector: 'app-ajouter-ev',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AjouterEvComponent implements OnInit {
 
-  constructor() { }
+  evenement: Evenement = new Evenement;
+
+  constructor(private ajouter: NbDialogRef<EvenementsComponent>) { }
 
   ngOnInit(): void {
+  }
+
+  close() {
+    this.ajouter.close(this.evenement);
+  }
+
+  annuler() {
+    this.ajouter.close();
   }
 
 }

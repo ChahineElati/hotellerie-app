@@ -24,14 +24,24 @@ export class ServicesComponent implements OnInit {
     });
   }
 
-  supprimer(plat: any) {
-    this.lst_srv.splice(this.lst_srv.indexOf(plat), 1);
+  supprimer(srv: any) {
+    this.lst_srv.splice(this.lst_srv.indexOf(srv), 1);
+    console.log(srv.id_srv);
+    this.http.delete("http://localhost:8080/api/services/" + srv.id_srv).subscribe();
   }
 
-  modfSrv(srv: any) {
+  modfSrv(srv: Service) {
     this.modf.open(ModifierSrvComponent)
     .onClose
-    .subscribe( nv_srv => nv_srv && (this.lst_srv[this.lst_srv.indexOf(srv)] = nv_srv));
+    .subscribe( (nv_srv:Service) => {
+
+      if(nv_srv) {
+        nv_srv.id_srv = this.lst_srv[this.lst_srv.indexOf(srv)].id_srv;
+        this.lst_srv[this.lst_srv.indexOf(srv)] = nv_srv;
+        this.http.put<Service>("http://localhost:8080/api/services/" + srv.id_srv, nv_srv).subscribe();
+      }
+      
+    });
   }
 
   effectuerSrv() {
@@ -41,6 +51,10 @@ export class ServicesComponent implements OnInit {
   ajouterSrv() {
     this.modf.open(AjouterSrvComponent)
     .onClose
-    .subscribe( nv_srv => nv_srv && (this.lst_srv.push(nv_srv)));
+    .subscribe( (nv_srv: Service) => {
+      nv_srv && (this.lst_srv.push(nv_srv));
+      this.http.post<Service>("http://localhost:8080/api/services/", nv_srv).subscribe();
+    }
+      );
   }
 }

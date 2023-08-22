@@ -1,1 +1,29 @@
-<p>ajouter-ev works!</p>
+<nb-card>
+    <nb-card-header>Ajouter Évènement</nb-card-header>
+    <nb-card-body>
+        <table cellspacing="10">
+            <tr>
+                <td><label for="nom"><b>Nom d'évènement : </b></label></td>
+                <td><input nbInput type="text" id="nom" fieldSize="medium" [(ngModel)]="evenement.nom_evt"></td>
+            </tr>
+            <tr>
+                <td><label for="dt_debut"><b>Date de debut : </b></label></td>
+                <td><input nbInput [nbDatepicker]="dt_debut" id="dt_debut" fieldSize="medium" [(ngModel)]="evenement.dt_debut">
+                    <nb-datepicker #dt_debut></nb-datepicker></td>
+            </tr>
+            <tr>
+                <td><label for="dt_fin"><b>Date de fin : </b></label></td>
+                <td><input nbInput [nbDatepicker]="dt_fin" id="dt_fin" fieldSize="medium" [(ngModel)]="evenement.dt_fin">
+                    <nb-datepicker #dt_fin></nb-datepicker></td>
+            </tr>
+            <tr>
+                <td><label for="type"><b>Type d'évènement : </b></label></td>
+                <td><input nbInput type="text" id="type" fieldSize="medium" [(ngModel)]="evenement.type_evt"></td>
+            </tr>
+        </table>
+    </nb-card-body>
+    <nb-card-footer align="center">
+        <button nbButton status="primary" (click)="close()">ajouter évènement</button>&nbsp;&nbsp;
+        <button nbButton status="danger" (click)="annuler()">annuler</button>
+    </nb-card-footer>
+</nb-card>

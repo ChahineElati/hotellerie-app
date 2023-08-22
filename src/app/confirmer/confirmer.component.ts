@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NbDialogRef } from '@nebular/theme';
+import { EvenementComponent } from '../evenement/evenement.component';
 
 @Component({
   selector: 'app-confirmer',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfirmerComponent implements OnInit {
 
-  constructor() { }
+  etat!: boolean;
+
+  constructor(private confirmer: NbDialogRef<EvenementComponent>) { }
 
   ngOnInit(): void {
   }
 
+  oui() {
+    this.etat = true;
+    this.confirmer.close(this.etat);
+  }
+
+  non() {
+    this.etat = false;
+    this.confirmer.close(this.etat);
+  }
+  
 }

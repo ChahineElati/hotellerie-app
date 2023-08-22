@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NbDialogRef } from '@nebular/theme';
 import { MenusComponent } from '../pages/menus/menus.component';
+import { Repas } from '../entities/repas';
 
 @Component({
   selector: 'app-modifier-plat',
@@ -10,12 +11,7 @@ import { MenusComponent } from '../pages/menus/menus.component';
 export class ModifierPlatComponent implements OnInit {
 
   
-  plat = {
-    nom: "",
-    prix: 0,
-    tmp_prep: 0,
-    type: "",
-  };
+  plat: Repas = new Repas;
 
   constructor(private modfRef: NbDialogRef<MenusComponent>) { }
 

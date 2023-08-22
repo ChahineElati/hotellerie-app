@@ -3,20 +3,16 @@
     <nb-card-body>
         <table cellspacing="10">
             <tr>
-                <td><label for="nom"><b>Nom : </b></label></td>
-                <td><input nbInput type="text" id="nom" fieldSize="medium" [(ngModel)]="plat.nom"></td>
+                <td><label for="label"><b>Label : </b></label></td>
+                <td><input nbInput type="text" id="label" fieldSize="medium" [(ngModel)]="srv.label"></td>
             </tr>
             <tr>
                 <td><label for="prix"><b>Prix : </b></label></td>
-                <td><input nbInput type="number" id="prix" fieldSize="medium" [(ngModel)]="plat.prix"></td>
+                <td><input nbInput type="number" id="prix" fieldSize="medium" [(ngModel)]="srv.prix"></td>
             </tr>
             <tr>
-                <td><label for="tmp-prep"><b>Temps de préparation : </b></label></td>
-                <td><input nbInput type="number" id="tmp-prep" fieldSize="medium" [(ngModel)]="plat.tmp_prep"></td>
-            </tr>
-            <tr>
-                <td><label for="type"><b>Type : </b></label></td>
-                <td><input nbInput type="text" id="type" fieldSize="medium" [(ngModel)]="plat.type"></td>
+                <td><label for="catg"><b>Catégorie : </b></label></td>
+                <td><input nbInput type="text" id="catg" fieldSize="medium" [(ngModel)]="srv.categorie"></td>
             </tr>
         </table>
     </nb-card-body>

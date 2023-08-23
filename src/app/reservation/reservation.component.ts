@@ -12,6 +12,8 @@ export class ReservationComponent implements OnInit {
   form = {
     dt_lct: new Date(),
     nb_jours: 0,
+    nom_clt: "",
+    num_tel: 0,
   }
 
   constructor(private dialogRef: NbDialogRef<ChambreComponent>) { }

@@ -4,6 +4,7 @@ import { ReservationComponent } from '../reservation/reservation.component';
 import { ModificationComponent } from '../modification/modification.component';
 import { HttpClient } from '@angular/common/http';
 import { Chambre } from '../entities/chambre';
+import { Client } from '../entities/client';
 
 @Component({
   selector: 'app-chambre',
@@ -14,6 +15,7 @@ export class ChambreComponent implements OnInit {
 
   @Input() chmb!: Chambre;
   etat!: boolean;
+  client: Client = new Client;
   
   constructor(private dialog: NbDialogService, private modifier: NbDialogService, private http:HttpClient) { }
 
@@ -32,7 +34,11 @@ export class ChambreComponent implements OnInit {
           this.chmb.dt_lct = form.dt_lct;
           this.chmb.nb_jours = form.nb_jours;
           this.etat = true;
+          this.client.nom_clt = form.nom_clt;
+          this.client.num_tel = form.num_tel;
+          
           this.http.put("http://localhost:8080/api/chambres/date/" + this.chmb.id_chmb, this.chmb).subscribe();
+          this.http.post("http://localhost:8080/api/clients/" + this.chmb.id_chmb, this.client).subscribe();
         }
     });
   }

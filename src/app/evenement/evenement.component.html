@@ -6,8 +6,8 @@
       </div>
     </nb-card-header>
     <nb-card-body>
-      <p><b>Date de debut : </b>{{details.dt_debut}}</p>
-      <p><b>Date de fin : </b>{{details.dt_fin}}</p>
+      <p><b>Date de debut : </b>{{details.dt_debut | date:'dd-MM-y'}}</p>
+      <p><b>Date de fin : </b>{{details.dt_fin | date:'dd-MM-y'}}</p>
       <p><b>Type d'évènement : </b>{{details.type_evt}}</p>
     </nb-card-body>
     <nb-card-footer align="center">

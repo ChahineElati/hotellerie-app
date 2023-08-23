@@ -9,7 +9,7 @@
                     <label for="dt"><b>Date : </b></label>
                 </td>
                 <td>
-                    <input nbInput [nbDatepicker]="datepicker" id="dt" fieldSize="medium">
+                    <input nbInput [nbDatepicker]="datepicker" id="dt" fieldSize="medium" [(ngModel)]="form.dt_lct">
                     <nb-datepicker #datepicker></nb-datepicker>
                 </td>
             </tr>
@@ -18,7 +18,7 @@
                     <label for="nb-jr"><b>Nombre de jours : </b></label>
                 </td>
                 <td>
-                    <input nbInput type="number" id="nb-jr" fieldSize="medium">
+                    <input nbInput type="number" id="nb-jr" fieldSize="medium" >
                 </td>
             </tr>
         </table>

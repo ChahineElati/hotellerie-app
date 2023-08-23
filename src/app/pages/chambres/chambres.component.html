@@ -4,12 +4,5 @@
 <br>
 <br>
 <div>
-    <app-chambre class="chambres" [details]=chmb1></app-chambre>
-    <app-chambre class="chambres" [details]=chmb2></app-chambre>
-    <app-chambre class="chambres" [details]=chmb1></app-chambre>
-</div>
-
-<div>
-    
-    <app-chambre class="chambres" [details]=chmb2></app-chambre>
+    <app-chambre class="chambres" *ngFor="let chmb of lst_chmb" [chmb]=chmb></app-chambre>
 </div>

@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Chambre } from 'src/app/entities/chambre';
 
 @Component({
   selector: 'app-chambres',
@@ -7,27 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChambresComponent implements OnInit {
 
-  chmb1 = {
-    num: "A-1",
-    etat: false,
-    prixParJr: 120,
-    type: "s+1",
-    dt_lct: "20/08/2023",
-    nb_jour: 6,
-  }
 
-  chmb2 = {
-    num: "B-1",
-    etat: true,
-    prixParJr: 150,
-    type: "s+2",
-    dt_lct: "02/05/2023",
-    nb_jour: 8,
-  }
+  lst_chmb!: Chambre[];
+  
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   ngOnInit(): void {
+    this.http.get("http://localhost:8080/api/chambres/")
+    .subscribe((data:any) => {
+      this.lst_chmb = data;
+    });
   }
 
 }

@@ -9,7 +9,10 @@ import { ChambreComponent } from '../chambre/chambre.component';
 })
 export class ReservationComponent implements OnInit {
 
-  v=false;
+  form = {
+    dt_lct: Date,
+    nb_jours: 0,
+  }
 
   constructor(private dialogRef: NbDialogRef<ChambreComponent>) { }
 
@@ -17,10 +20,10 @@ export class ReservationComponent implements OnInit {
   }
 
   reserver() {
-    this.dialogRef.close(this.v);
+    this.dialogRef.close(this.form);
   }
 
   annuler() {
-    this.dialogRef.close(this.v);
+    this.dialogRef.close();
   }
 }

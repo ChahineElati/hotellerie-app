@@ -10,7 +10,7 @@ import { ChambreComponent } from '../chambre/chambre.component';
 export class ReservationComponent implements OnInit {
 
   form = {
-    dt_lct: Date,
+    dt_lct: new Date(),
     nb_jours: 0,
   }
 
@@ -26,4 +26,10 @@ export class ReservationComponent implements OnInit {
   annuler() {
     this.dialogRef.close();
   }
+
+  filterFn = (dt: Date) => {
+    let date = new Date();
+    return dt > date;
+  }
+  
 }

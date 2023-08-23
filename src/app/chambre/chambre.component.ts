@@ -28,15 +28,19 @@ export class ChambreComponent implements OnInit {
 
   openRes() {
       this.dialog.open(ReservationComponent,).onClose.subscribe((form)=> {
-      this.chmb.dt_lct = form.dt_lct;
-      this.chmb.nb_jours = form.nb_jours;
-      this.http.put("http://localhost:8080/api/chambres/" + this.chmb.id_chmb, this.chmb);
+        if(form) {
+          this.chmb.dt_lct = form.dt_lct;
+          this.chmb.nb_jours = form.nb_jours;
+          this.etat = true;
+          this.http.put("http://localhost:8080/api/chambres/date/" + this.chmb.id_chmb, this.chmb).subscribe();
+        }
     });
   }
 
   openModf() {
-    this.modifier.open(ModificationComponent).onClose.subscribe((v)=> {
-      console.log(v);
+    this.modifier.open(ModificationComponent).onClose.subscribe((prix_par_jr)=> {
+      this.chmb.prix_par_jr = prix_par_jr;
+      this.http.put("http://localhost:8080/api/chambres/prix_par_jour/" + this.chmb.id_chmb, this.chmb).subscribe();
     });
   }
 }

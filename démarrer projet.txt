@@ -1,0 +1,7 @@
+- choisir branche main
+- cloner le projet
+- ouvrir le projet avec vs code
+- choisir le terminal command prompt
+- taper la commande: npm i
+- taper la commande: ng serve
+- dans le navigateur copier le lien: http://localhost:4200/

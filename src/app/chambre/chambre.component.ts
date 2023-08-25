@@ -23,9 +23,7 @@ export class ChambreComponent implements OnInit {
       let dt_fin = new Date(this.chmb.dt_lct);
       dt_fin.setDate(dt_fin.getDate() + this.chmb.nb_jours);
       let dt_curr = new Date();
-      console.log("dt curr " + dt_curr);
-      console.log("dt fin " + dt_fin);
-       this.etat = !(dt_curr>dt_fin);
+      this.etat = !(dt_curr>dt_fin);
   }
 
   openRes() {
@@ -36,9 +34,8 @@ export class ChambreComponent implements OnInit {
           this.etat = true;
           this.client.nom_clt = form.nom_clt;
           this.client.num_tel = form.num_tel;
-          
-          this.http.put("http://localhost:8080/api/chambres/date/" + this.chmb.id_chmb, this.chmb).subscribe();
           this.http.post("http://localhost:8080/api/clients/" + this.chmb.id_chmb, this.client).subscribe();
+          this.http.put("http://localhost:8080/api/chambres/date/" + this.chmb.id_chmb, this.chmb).subscribe();
         }
     });
   }

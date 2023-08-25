@@ -11,12 +11,16 @@ export class AppComponent {
   name = "Chahine Elati";
   email = "";
   mdp = "";
-  auth = true;
+  auth = false;
+  bad_crd!: boolean;
 
   logIn() {
     if (this.email.toLowerCase() == "chahine@gmail.com" && this.mdp == "1234") {
       this.auth = true;
       this.mdp = "";
+      this.bad_crd = false;
+    } else {
+      this.bad_crd = true;
     }
   }
 

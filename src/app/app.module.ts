@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -26,6 +26,10 @@ import { EvenementComponent } from './evenement/evenement.component';
 import { ConfirmerComponent } from './confirmer/confirmer.component';
 import { EvenementsComponent } from './pages/evenements/evenements.component';
 import { HttpClientModule } from '@angular/common/http';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+
+registerLocaleData(localeFr, 'fr');
 
 @NgModule({
   declarations: [
@@ -51,7 +55,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     MenuModule,
     BrowserAnimationsModule,
-    NbThemeModule.forRoot({ name: 'cosmic' }),
+    NbThemeModule.forRoot({ name: 'default' }),
     NbLayoutModule,
     NbEvaIconsModule,
     AppRoutingModule,
@@ -71,7 +75,7 @@ import { HttpClientModule } from '@angular/common/http';
     NbAccordionModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [{provide: LOCALE_ID, useValue: 'fr' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

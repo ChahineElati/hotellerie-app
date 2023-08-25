@@ -10,8 +10,10 @@
       <p><b>Type : </b>{{chmb.type_chmb}}</p>
       <p><b>Etat : </b>{{etat ? "Réservée" : "Libre"}}</p>
       <div *ngIf="etat">
-        <p> <b>Date de location : </b>{{chmb.dt_lct | date:'dd-MM-y'}}</p>
+        <p> <b>Date de location : </b>{{chmb.dt_lct | date:'d MMM y'}}</p>
         <p><b>Nombre de jours : </b>{{chmb.nb_jours}}</p>
+        <p><b>Client : </b>{{clt.nom}}</p>
+        <p><b>Numéro Tel. : </b>{{clt.numtel}}</p>
       </div>
       
       <!-- <div align="right"><a routerLink="/historique/{{chmb.num}}">Historique</a></div> -->

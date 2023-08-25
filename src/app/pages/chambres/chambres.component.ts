@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { Chambre } from 'src/app/entities/chambre';
 
 @Component({
@@ -21,5 +21,4 @@ export class ChambresComponent implements OnInit {
       this.lst_chmb = data;
     });
   }
-
 }

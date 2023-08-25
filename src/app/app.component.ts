@@ -11,7 +11,7 @@ export class AppComponent {
   name = "Chahine Elati";
   email = "";
   mdp = "";
-  auth = false;
+  auth = true;
   bad_crd!: boolean;
 
   logIn() {

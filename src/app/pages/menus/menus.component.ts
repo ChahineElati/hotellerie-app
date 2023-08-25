@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { NbDialogService } from '@nebular/theme';
 import { AjouterPlatComponent } from 'src/app/ajouter-plat/ajouter-plat.component';
@@ -28,8 +28,9 @@ export class MenusComponent implements OnInit {
   }
 
   supprimer(plat: any) {
-    this.lst_plats.splice(this.lst_plats.indexOf(plat), 1);
+    console.log(plat.id_rep);
     this.httpClient.delete("http://localhost:8080/api/repas/" + plat.id_rep).subscribe();
+    this.lst_plats.splice(this.lst_plats.indexOf(plat), 1);
   }
 
   modfPlat(plat: Repas) {
@@ -46,7 +47,9 @@ export class MenusComponent implements OnInit {
   }
 
   effectuerPlat() {
-    this.modf.open(EffectuerPlatComponent);
+    this.modf.open(EffectuerPlatComponent).onClose.subscribe(client => {
+      
+    });
   }
 
   ajouterPlat() {
@@ -57,6 +60,10 @@ export class MenusComponent implements OnInit {
         this.lst_plats.push(nv_plat);
         this.httpClient.post<Repas>("http://localhost:8080/api/repas/", nv_plat).subscribe();
         console.log(this.lst_plats);
+        this.httpClient.get<Repas[]>("http://localhost:8080/api/repas/")
+    .subscribe((data:Repas[]) => {
+      this.lst_plats = data;
+    });
       } 
     });
   }

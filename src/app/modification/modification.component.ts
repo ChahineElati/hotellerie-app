@@ -9,7 +9,11 @@ import { ChambreComponent } from '../chambre/chambre.component';
 })
 export class ModificationComponent implements OnInit {
 
-prix_par_jr!: number;
+chmb = {
+  num: '',
+  prix_par_jr: 0,
+  type: 's+0',
+}
 
   constructor(private dialogRef: NbDialogRef<ChambreComponent>) { }
 
@@ -17,7 +21,7 @@ prix_par_jr!: number;
   }
 
   modifier() {
-    this.dialogRef.close(this.prix_par_jr);
+    this.dialogRef.close(this.chmb);
   }
 
   annuler() {

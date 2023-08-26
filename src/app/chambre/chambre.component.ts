@@ -62,9 +62,11 @@ export class ChambreComponent implements OnInit {
   }
 
   openModf() {
-    this.modifier.open(ModificationComponent).onClose.subscribe((prix_par_jr)=> {
-      this.chmb.prix_par_jr = prix_par_jr;
-      this.http.put("http://localhost:8080/api/chambres/prix_par_jour/" + this.chmb.id_chmb, this.chmb).subscribe();
+    this.modifier.open(ModificationComponent).onClose.subscribe((chmbr)=> {
+      this.chmb.num = chmbr.num;
+      this.chmb.prix_par_jr = chmbr.prix_par_jr;
+      this.chmb.type_chmb = chmbr.type;
+      this.http.put("http://localhost:8080/api/chambres/" + this.chmb.id_chmb, this.chmb).subscribe();
     });
   }
 }

@@ -4,8 +4,29 @@
     </nb-card-header>
     <nb-card-body>
         
-        <label for="prix"><b>Prix par jour : </b></label>
-        <input nbInput type="number" id="prix" fieldSize="medium" [(ngModel)]="prix_par_jr">
+        <table>
+            <tr>
+                <td><label for="nom"><b>Nom de la chambre : </b></label></td>
+                <td><input nbInput type="text" id="nom" fieldSize="medium" [(ngModel)]="chmb.num"></td>
+            </tr>
+            <tr>
+                <td><label for="prix"><b>Prix par jour : </b></label></td>
+                <td><input nbInput type="number" id="prix" fieldSize="medium" [(ngModel)]="chmb.prix_par_jr"></td>
+            </tr>
+            <tr>
+                <td><label for="type"><b>Type de la chambre : </b></label></td>
+                <td>
+                          <nb-select placeholder="Select Showcase" [(selected)]="chmb.type">
+                            <nb-option value="s+0">s+0</nb-option>
+                            <nb-option value="s+1">s+1</nb-option>
+                            <nb-option value="s+2">s+2</nb-option>
+                            <nb-option value="s+3">s+3</nb-option>
+                          </nb-select>
+                </td>
+            </tr>
+        </table>
+        
+        
         
     </nb-card-body>
     <nb-card-footer align="center">

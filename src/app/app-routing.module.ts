@@ -8,6 +8,7 @@ import { ServicesComponent } from './pages/services/services.component';
 import { EvenementsComponent } from './pages/evenements/evenements.component';
 import { HistoriqueComponent } from './pages/historique/historique.component';
 import { ClientsComponent } from './pages/clients/clients.component';
+import { ClientsServicesComponent } from './pages/clients-services/clients-services.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'repas/:rep_id/clients',
     component: ClientsComponent,
+  },
+  {
+    path: 'services/:id_srv/clients',
+    component: ClientsServicesComponent,
   },
 ];
 

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NbDialogRef } from '@nebular/theme';
 import { ServicesComponent } from '../pages/services/services.component';
+import { Chambre } from '../entities/chambre';
+import { HttpClient } from '@angular/common/http';
+import { Client } from '../entities/client';
 
 @Component({
   selector: 'app-effectuer-srv',
@@ -14,14 +17,19 @@ export class EffectuerSrvComponent implements OnInit {
     prenom: '',
   };
 
-  constructor(private effct: NbDialogRef<ServicesComponent>) { }
+  lst_chmb!: Chambre[];
+
+  constructor(private effct: NbDialogRef<ServicesComponent>, private http: HttpClient) { }
 
   ngOnInit(): void {
-    
+    this.http.get("http://localhost:8080/api/chambres/")
+    .subscribe((data:any) => {
+      this.lst_chmb = data;
+    });
   }
 
-  effectuer() {
-    this.effct.close();
+  effectuer(client: Client) {
+    this.effct.close(client);
   }
 
   close() {

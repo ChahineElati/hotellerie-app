@@ -1,7 +1,17 @@
 <nb-card>
-    <nb-card-header>Effectuer Service</nb-card-header>
+    <nb-card-header>Choisir Client</nb-card-header>
     <nb-card-body>
-        <table cellspacing="10">
+
+
+
+        <nb-list>
+            <nb-list-item *ngFor="let chmb of lst_chmb" (click)="effectuer(chmb.client)">
+                <a routerLink="/services"><span><b>Chambre: </b>{{chmb.num}}</span>
+                    <br><span><b>Client: </b>{{chmb.client.nom_clt}}</span></a>
+            </nb-list-item>
+        </nb-list>
+    </nb-card-body>
+        <!-- <table cellspacing="10">
             <tr>
                 <td><label for="nom"><b>Nom du client : </b></label></td>
                 <td><input nbInput type="text" id="nom" [(ngModel)]="client.nom"></td>
@@ -15,5 +25,5 @@
     <nb-card-footer align="center">
         <button nbButton status="primary" (click)="effectuer()">effectuer</button>&nbsp;&nbsp;
         <button nbButton status="danger" (click)="close()">annuler</button>
-    </nb-card-footer>
+    </nb-card-footer> -->
 </nb-card>

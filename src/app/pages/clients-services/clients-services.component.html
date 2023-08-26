@@ -1,0 +1,13 @@
+<h3>Liste des clients pour le service {{srv.label}}</h3>
+<hr>
+
+<nb-card>
+    <nb-card-body>
+        <p *ngIf="clients.length==0"><b>Aucun Client</b></p>
+        <nb-list>
+            <nb-list-item *ngFor="let client of clients">
+                <p><b> {{client.nom_clt}}</b><br><b>Num tel.: </b>{{client.num_tel}}</p>
+            </nb-list-item>
+        </nb-list>
+    </nb-card-body>
+</nb-card>

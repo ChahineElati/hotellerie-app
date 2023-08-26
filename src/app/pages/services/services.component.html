@@ -10,7 +10,8 @@
          <nb-accordion-item-body>
            <p><b>Prix : </b> {{srv.prix}} Dt</p>
            <p><b>Catégorie : </b> {{srv.categorie}}</p>
-           <button nbButton status="primary" (click)="effectuerSrv()">effectuer service</button>&nbsp;&nbsp;
+           <p><a routerLink="/services/{{srv.id_srv}}/clients"><b>Clients</b></a></p>
+           <button nbButton status="primary" (click)="effectuerSrv(srv)">effectuer service</button>&nbsp;&nbsp;
            <button nbButton status="primary" (click)="modfSrv(srv)">modifier</button>&nbsp;&nbsp;
            <button nbButton status="danger" (click)="supprimer(srv)">supprimer</button>
          </nb-accordion-item-body>

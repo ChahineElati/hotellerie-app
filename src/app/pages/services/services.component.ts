@@ -44,8 +44,10 @@ export class ServicesComponent implements OnInit {
     });
   }
 
-  effectuerSrv() {
-    this.modf.open(EffectuerSrvComponent);
+  effectuerSrv(service: Service) {
+    this.modf.open(EffectuerSrvComponent).onClose.subscribe(client => {
+      this.http.put("http://localhost:8080/api/services/" + service.id_srv + "/clients", client).subscribe()
+    });
   }
 
   ajouterSrv() {

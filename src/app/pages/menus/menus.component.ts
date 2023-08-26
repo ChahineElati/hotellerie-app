@@ -46,9 +46,9 @@ export class MenusComponent implements OnInit {
     });
   }
 
-  effectuerPlat() {
+  effectuerPlat(plat: Repas) {
     this.modf.open(EffectuerPlatComponent).onClose.subscribe(client => {
-      
+      this.httpClient.put("http://localhost:8080/api/repas/" + plat.id_rep + "/clients", client).subscribe()
     });
   }
 

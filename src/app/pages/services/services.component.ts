@@ -25,9 +25,9 @@ export class ServicesComponent implements OnInit {
   }
 
   supprimer(srv: any) {
-    this.lst_srv.splice(this.lst_srv.indexOf(srv), 1);
     console.log(srv.id_srv);
     this.http.delete("http://localhost:8080/api/services/" + srv.id_srv).subscribe();
+    this.lst_srv.splice(this.lst_srv.indexOf(srv), 1);
   }
 
   modfSrv(srv: Service) {
@@ -53,8 +53,14 @@ export class ServicesComponent implements OnInit {
     .onClose
     .subscribe( (nv_srv: Service) => {
       nv_srv && (this.lst_srv.push(nv_srv));
-      this.http.post<Service>("http://localhost:8080/api/services/", nv_srv).subscribe();
+      this.http.post<Service>("http://localhost:8080/api/services/", nv_srv).subscribe(() => {
+        this.http.get("http://localhost:8080/api/services/")
+    .subscribe((data:any) => {
+      this.lst_srv = data;
+    });
+      });
     }
       );
+
   }
 }

@@ -11,7 +11,8 @@
            <p><b>Prix : </b> {{plat.prix}} Dt</p>
            <p><b>Temps de préparation : </b> {{plat.tmp_prep}} mins</p>
            <p><b>Type : </b> {{plat.type_plat}} </p>
-           <button nbButton status="primary" (click)="effectuerPlat()">effectuer plat</button>&nbsp;&nbsp;
+           <p><a routerLink="/repas/{{plat.id_rep}}/clients"><b>Clients</b></a></p>
+           <button nbButton status="primary" (click)="effectuerPlat(plat)">effectuer plat</button>&nbsp;&nbsp;
            <button nbButton status="primary" (click)="modfPlat(plat)">modifier</button>&nbsp;&nbsp;
            <button nbButton status="danger" (click)="supprimer(plat)">supprimer</button>
          </nb-accordion-item-body>

@@ -29,7 +29,7 @@ export class EffectuerPlatComponent implements OnInit {
   }
 
   effectuer(client : Client) {
-    this.effct.close();
+    this.effct.close(client);
   }
 
   close() {

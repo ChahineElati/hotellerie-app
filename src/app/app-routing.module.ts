@@ -7,6 +7,7 @@ import { MenusComponent } from './pages/menus/menus.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { EvenementsComponent } from './pages/evenements/evenements.component';
 import { HistoriqueComponent } from './pages/historique/historique.component';
+import { ClientsComponent } from './pages/clients/clients.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'historique/:num',
     component: HistoriqueComponent,
+  },
+  {
+    path: 'repas/:rep_id/clients',
+    component: ClientsComponent,
   },
 ];
 

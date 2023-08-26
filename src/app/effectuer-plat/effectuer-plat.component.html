@@ -13,7 +13,7 @@
         </table> -->
         <nb-list>
             <nb-list-item *ngFor="let chmb of lst_chmb" (click)="effectuer(chmb.client)">
-                <a href=""><span><b>Chambre: </b>{{chmb.num}}</span>
+                <a routerLink="/menus"><span><b>Chambre: </b>{{chmb.num}}</span>
                     <br><span><b>Client: </b>{{chmb.client.nom_clt}}</span></a>
             </nb-list-item>
         </nb-list>

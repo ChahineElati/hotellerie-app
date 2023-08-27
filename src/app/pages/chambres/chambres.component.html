@@ -5,5 +5,6 @@
 <input nbInput type="search" placeholder="Recherche" shape="round" [(ngModel)]="srch">
 <button style="margin-left: 5px;" nbButton status="primary" shape="round" (click)="recherche()"><nb-icon icon="search-outline"></nb-icon></button>
 <div style="margin-top: 20px;">
+    <div align="center" *ngIf="lst_chmb.length==0" style="margin-top: 50px;"><p style="font-size: 20px;"><b>Aucune chambre trouvée</b></p></div>
     <app-chambre class="chambres" *ngFor="let chmb of lst_chmb" [chmb]=chmb></app-chambre>
 </div>

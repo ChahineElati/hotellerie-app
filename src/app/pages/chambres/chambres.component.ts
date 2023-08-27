@@ -23,7 +23,7 @@ export class ChambresComponent implements OnInit {
   }
   
   recherche() {
-    if(this.srch != "") {
+    if(this.srch != "" && this.srch !=null) {
       this.http.get("http://localhost:8080/api/chambres/" + this.srch).subscribe(
       (data:any) => {
         this.lst_chmb = data;

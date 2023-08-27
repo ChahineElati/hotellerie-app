@@ -30,6 +30,7 @@ import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import { ClientsComponent } from './pages/clients/clients.component';
 import { ClientsServicesComponent } from './pages/clients-services/clients-services.component';
+import { CreationComponent } from './creation/creation.component';
 
 registerLocaleData(localeFr, 'fr');
 
@@ -54,6 +55,7 @@ registerLocaleData(localeFr, 'fr');
     EvenementsComponent,
     ClientsComponent,
     ClientsServicesComponent,
+    CreationComponent,
   ],
   imports: [
     BrowserModule,

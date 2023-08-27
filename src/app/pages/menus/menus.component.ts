@@ -17,13 +17,13 @@ export class MenusComponent implements OnInit {
   lst_plats!: Repas[];
 
   constructor(private modf: NbDialogService, private httpClient: HttpClient, private router: Router,) { }
-  
+
   ngOnInit(): void {
 
     this.httpClient.get("http://localhost:8080/api/repas/")
-    .subscribe((data:any) => {
-      this.lst_plats = data;
-    });
+      .subscribe((data: any) => {
+        this.lst_plats = data;
+      });
 
   }
 
@@ -35,15 +35,14 @@ export class MenusComponent implements OnInit {
 
   modfPlat(plat: Repas) {
     this.modf.open(ModifierPlatComponent)
-    .onClose
-    .subscribe( (nv_plat: Repas) =>
-    {
-      if(nv_plat) {
-        nv_plat.id_rep = this.lst_plats[this.lst_plats.indexOf(plat)].id_rep;
-        this.lst_plats[this.lst_plats.indexOf(plat)] = nv_plat;
-        this.httpClient.put<Repas>("http://localhost:8080/api/repas/" + plat.id_rep, nv_plat).subscribe();
-      }
-    });
+      .onClose
+      .subscribe((nv_plat: Repas) => {
+        if (nv_plat) {
+          nv_plat.id_rep = this.lst_plats[this.lst_plats.indexOf(plat)].id_rep;
+          this.lst_plats[this.lst_plats.indexOf(plat)] = nv_plat;
+          this.httpClient.put<Repas>("http://localhost:8080/api/repas/" + plat.id_rep, nv_plat).subscribe();
+        }
+      });
   }
 
   effectuerPlat(plat: Repas) {
@@ -54,17 +53,19 @@ export class MenusComponent implements OnInit {
 
   ajouterPlat() {
     this.modf.open(AjouterPlatComponent)
-    .onClose
-    .subscribe( (nv_plat: Repas)=> {
-      if(nv_plat) {
-        this.lst_plats.push(nv_plat);
-        this.httpClient.post<Repas>("http://localhost:8080/api/repas/", nv_plat).subscribe();
-        console.log(this.lst_plats);
-        this.httpClient.get<Repas[]>("http://localhost:8080/api/repas/")
-    .subscribe((data:Repas[]) => {
-      this.lst_plats = data;
-    });
-      } 
-    });
+      .onClose
+      .subscribe((nv_plat: Repas) => {
+        if (nv_plat) {
+          this.lst_plats.push(nv_plat);
+          this.httpClient.post<Repas>("http://localhost:8080/api/repas/", nv_plat).subscribe(
+            () => {
+              this.httpClient.get<Repas[]>("http://localhost:8080/api/repas/")
+                .subscribe((data: Repas[]) => {
+                  this.lst_plats = data;
+                });
+            }
+          );
+        }
+      });
   }
 }

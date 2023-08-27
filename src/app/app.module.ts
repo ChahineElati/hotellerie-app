@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { MenuModule } from './menu/menu.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbMenuModule, NbCardModule, NbInputModule, NbButtonModule, NbUserModule, NbSelectModule, NbDialogModule, NbDatepickerModule, NbListModule, NbAccordionModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbMenuModule, NbCardModule, NbInputModule, NbButtonModule, NbUserModule, NbSelectModule, NbDialogModule, NbDatepickerModule, NbListModule, NbAccordionModule, NbIconModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { AppRoutingModule } from './app-routing.module';
 import { ChambresComponent } from './pages/chambres/chambres.component';
@@ -78,6 +78,7 @@ registerLocaleData(localeFr, 'fr');
     NbListModule,
     NbAccordionModule,
     HttpClientModule,
+    NbIconModule,
   ],
   providers: [{provide: LOCALE_ID, useValue: 'fr' }],
   bootstrap: [AppComponent]

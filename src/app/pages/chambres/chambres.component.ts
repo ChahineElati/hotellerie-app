@@ -11,7 +11,7 @@ export class ChambresComponent implements OnInit {
 
 
   lst_chmb!: Chambre[];
-  
+  srch!: string;
 
   constructor(private http:HttpClient) { }
 
@@ -20,5 +20,20 @@ export class ChambresComponent implements OnInit {
     .subscribe((data:any) => {
       this.lst_chmb = data;
     });
+  }
+  
+  recherche() {
+    if(this.srch != "") {
+      this.http.get("http://localhost:8080/api/chambres/" + this.srch).subscribe(
+      (data:any) => {
+        this.lst_chmb = data;
+      }
+    );
+    } else {
+      this.http.get("http://localhost:8080/api/chambres/")
+    .subscribe((data:any) => {
+      this.lst_chmb = data;
+    });
+    }
   }
 }

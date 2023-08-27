@@ -2,7 +2,8 @@
 
 <hr>
 <br>
-<br>
-<div>
+<input nbInput type="search" placeholder="Recherche" shape="round" [(ngModel)]="srch">
+<button style="margin-left: 5px;" nbButton status="primary" shape="round" (click)="recherche()"><nb-icon icon="search-outline"></nb-icon></button>
+<div style="margin-top: 20px;">
     <app-chambre class="chambres" *ngFor="let chmb of lst_chmb" [chmb]=chmb></app-chambre>
 </div>

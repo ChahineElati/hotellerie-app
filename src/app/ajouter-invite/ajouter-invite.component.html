@@ -1,0 +1,20 @@
+<nb-card>
+    <nb-card-header>Ajouter un invité</nb-card-header>
+    <nb-card-body>
+        <table cellspacing="10">
+            <tr>
+                <td><label for="nom"><b>Nom d'invité : </b></label></td>
+                <td><input nbInput type="text" id="nom" fieldSize="medium" [(ngModel)]="client.nom_clt"></td>
+            </tr>
+            <tr>
+                <td><label for="num"><b>Num Tel.: </b></label></td>
+                <td><input nbInput type="number" id="num" fieldSize="medium" [(ngModel)]="client.num_tel"></td>
+            </tr>
+            
+        </table>
+    </nb-card-body>
+    <nb-card-footer align="center">
+        <button nbButton status="primary" (click)="ajouterInvite()">ajouter invité</button>&nbsp;&nbsp;
+        <button nbButton status="danger" (click)="annuler()">annuler</button>
+    </nb-card-footer>
+</nb-card>

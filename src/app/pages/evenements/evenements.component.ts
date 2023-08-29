@@ -19,7 +19,7 @@ export class EvenementsComponent implements OnInit {
     this.http.get("http://localhost:8080/api/evenements/")
     .subscribe( (data:any) => {
       this.lst_evt = data;
-    })
+    });
   }
 
   ajouterEvn() {
@@ -28,7 +28,15 @@ export class EvenementsComponent implements OnInit {
     .subscribe((nv_evt: Evenement) => {
       if(nv_evt) {
         this.lst_evt.push(nv_evt);
-        this.http.post("http://localhost:8080/api/evenements/", nv_evt).subscribe();
+        this.http.post("http://localhost:8080/api/evenements/", nv_evt).subscribe(
+          () => {
+            this.http.get("http://localhost:8080/api/evenements/")
+    .subscribe( (data:any) => {
+      this.lst_evt = data;
+    });
+          }
+        );
+        
       }
     });
   }

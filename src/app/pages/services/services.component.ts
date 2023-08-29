@@ -38,7 +38,14 @@ export class ServicesComponent implements OnInit {
       if(nv_srv) {
         nv_srv.id_srv = this.lst_srv[this.lst_srv.indexOf(srv)].id_srv;
         this.lst_srv[this.lst_srv.indexOf(srv)] = nv_srv;
-        this.http.put<Service>("http://localhost:8080/api/services/" + srv.id_srv, nv_srv).subscribe();
+        this.http.put<Service>("http://localhost:8080/api/services/" + srv.id_srv, nv_srv).subscribe(
+          () => {
+            this.http.get("http://localhost:8080/api/services/")
+    .subscribe((data:any) => {
+      this.lst_srv = data;
+    });
+          }
+        );
       }
       
     });

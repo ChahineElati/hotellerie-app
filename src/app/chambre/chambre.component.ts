@@ -51,8 +51,10 @@ export class ChambreComponent implements OnInit {
           this.etat = true;
           this.client.nom_clt = form.nom_clt;
           this.client.num_tel = form.num_tel;
+          this.client.invt = false;
           this.clt.nom = this.client.nom_clt;
           this.clt.numtel = this.client.num_tel;
+          
           concat(
             this.http.post("http://localhost:8080/api/clients/", this.client),
             this.http.put("http://localhost:8080/api/chambres/date/" + this.chmb.id_chmb, this.chmb)

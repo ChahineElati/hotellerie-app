@@ -31,6 +31,8 @@ import localeFr from '@angular/common/locales/fr';
 import { ClientsComponent } from './pages/clients/clients.component';
 import { ClientsServicesComponent } from './pages/clients-services/clients-services.component';
 import { CreationComponent } from './creation/creation.component';
+import { AjouterInviteComponent } from './ajouter-invite/ajouter-invite.component';
+import { ClientsEvtComponent } from './pages/clients-evt/clients-evt.component';
 
 registerLocaleData(localeFr, 'fr');
 
@@ -56,6 +58,8 @@ registerLocaleData(localeFr, 'fr');
     ClientsComponent,
     ClientsServicesComponent,
     CreationComponent,
+    AjouterInviteComponent,
+    ClientsEvtComponent,
   ],
   imports: [
     BrowserModule,

@@ -40,7 +40,14 @@ export class MenusComponent implements OnInit {
         if (nv_plat) {
           nv_plat.id_rep = this.lst_plats[this.lst_plats.indexOf(plat)].id_rep;
           this.lst_plats[this.lst_plats.indexOf(plat)] = nv_plat;
-          this.httpClient.put<Repas>("http://localhost:8080/api/repas/" + plat.id_rep, nv_plat).subscribe();
+          this.httpClient.put<Repas>("http://localhost:8080/api/repas/" + plat.id_rep, nv_plat).subscribe(
+            () => {
+              this.httpClient.get("http://localhost:8080/api/repas/")
+      .subscribe((data: any) => {
+        this.lst_plats = data;
+      });
+            }
+          );
         }
       });
   }

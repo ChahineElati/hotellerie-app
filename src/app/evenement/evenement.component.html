@@ -9,10 +9,13 @@
       <p><b>Date de debut : </b>{{details.dt_debut | date:'d MMM y'}}</p>
       <p><b>Date de fin : </b>{{details.dt_fin | date:'d MMM y'}}</p>
       <p><b>Type d'évènement : </b>{{details.type_evt}}</p>
+      <p><a routerLink="/evenements/{{details.id_evt}}/clients"><b>Clients</b></a></p>
     </nb-card-body>
     <nb-card-footer align="center">
         <p>
-            <button nbButton status="primary" (click)="openModf()" [disabled]="details.etat">valider</button>
+          <button nbButton status="primary" (click)="openAjout()" [disabled]="details.etat">ajouter invité</button>
+          &nbsp;&nbsp;  
+          <button nbButton status="primary" (click)="openModf()" [disabled]="details.etat">valider</button>
         </p>
         
         
